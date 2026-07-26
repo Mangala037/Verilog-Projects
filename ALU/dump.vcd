@@ -1,5 +1,5 @@
 $date
-	Sun Jul 26 04:44:49 2026
+	Sun Jul 26 05:55:52 2026
 $end
 $version
 	Icarus Verilog
@@ -7,18 +7,18 @@ $end
 $timescale
 	1ps
 $end
-$scope module alu_tb $end
-$var wire 4 ! Result [3:0] $end
+$scope module alu_8bit_tb $end
+$var wire 8 ! Result [7:0] $end
 $var wire 1 " Carry $end
-$var reg 4 # A [3:0] $end
-$var reg 4 $ B [3:0] $end
+$var reg 8 # A [7:0] $end
+$var reg 8 $ B [7:0] $end
 $var reg 3 % Sel [2:0] $end
 $scope module uut $end
-$var wire 4 & A [3:0] $end
-$var wire 4 ' B [3:0] $end
+$var wire 8 & A [7:0] $end
+$var wire 8 ' B [7:0] $end
 $var wire 3 ( Sel [2:0] $end
 $var reg 1 " Carry $end
-$var reg 4 ) Result [3:0] $end
+$var reg 8 ) Result [7:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -27,63 +27,69 @@ $dumpall
 $end
 #0
 $dumpvars
-b1000 )
+b11111 )
 b0 (
-b11 '
-b101 &
+b1010 '
+b10101 &
 b0 %
-b11 $
-b101 #
+b1010 $
+b10101 #
 0"
-b1000 !
+b11111 !
 $end
 #10000
-b111 !
-b111 )
+b10000 !
+b10000 )
 b1 %
 b1 (
-b10 $
-b10 '
-b1001 #
-b1001 &
+b101 $
+b101 '
 #20000
-b1000 !
-b1000 )
+b10001000 !
+b10001000 )
 b10 %
 b10 (
-b1010 $
-b1010 '
-b1100 #
-b1100 &
+b10101010 $
+b10101010 '
+b11001100 #
+b11001100 &
 #30000
-b1110 !
-b1110 )
+b11101110 !
+b11101110 )
 b11 %
 b11 (
 #40000
-b110 !
-b110 )
+b1100110 !
+b1100110 )
 b100 %
 b100 (
 #50000
-b101 !
-b101 )
+b110011 !
+b110011 )
 b101 %
 b101 (
-b0 $
-b0 '
-b1010 #
-b1010 &
 #60000
-b110 !
-b110 )
+b11110 !
+b11110 )
 b110 %
 b110 (
-b11 #
-b11 &
+b1111 #
+b1111 &
 #70000
+b1111000 !
+b1111000 )
 b111 %
 b111 (
-b1100 #
-b1100 &
+b11110000 #
+b11110000 &
 #80000
+1"
+b0 !
+b0 )
+b0 %
+b0 (
+b1 $
+b1 '
+b11111111 #
+b11111111 &
+#90000
